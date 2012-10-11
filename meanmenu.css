@@ -1,0 +1,101 @@
+
+
+/* #######################################################################
+
+	meanMenu
+	--------
+	
+	To be used with jquery.meanmenu.js by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
+
+####################################################################### */
+
+/* hide the link until viewport size is reached */
+a.meanmenu-reveal {
+display: none;
+}
+
+/* when under viewport size, .mean-container is added to body */
+.mean-container .mean-bar { 
+float: left;
+width: 100%;
+position: relative;
+background: #0c1923;
+padding: 4px 0;
+min-height: 33px;
+}
+.mean-container a.meanmenu-reveal {
+width: 22px;
+height: 22px;
+padding: 10px 10px 8px 10px;
+position: absolute;
+top: 0;
+right: 0;
+cursor: pointer;
+color: #fff;
+text-decoration: none;
+font-size: 16px;
+text-indent: -9999em;
+line-height: 22px;
+font-size: 1px;
+display: block;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 700;
+}
+.mean-container a.meanmenu-reveal span {
+display: block;
+background: #fff;
+height: 3px;
+margin-top: 3px;
+}
+.mean-container .mean-nav { 
+float: left;
+width: 100%;
+background: #0c1923;
+margin-top: 33px;
+}
+.mean-container .mean-nav ul li a {
+display: block;
+float: left;
+width: 90%;
+padding: 1em 5%;
+margin: 0;
+text-align: left;
+color: #fff;
+border-top: 1px solid #383838;
+border-top: 1px solid rgba(255,255,255,0.5);
+text-decoration: none;
+text-transform: uppercase;
+}
+.mean-container .mean-nav ul li:first-child a { 
+border: none; 
+}
+.mean-container .mean-nav ul li li a {
+width: 80%;
+padding: 1em 10%;
+border-top: 1px solid #f1f1f1;
+border-top: 1px solid rgba(255,255,255,0.25);
+opacity: 0.75; 
+filter: alpha(opacity=75);
+text-shadow: none !important;
+visibility: visible;
+}
+.mean-container .mean-nav ul li li:first-child a {
+border-top: 1px solid #f1f1f1;
+border-top: 1px solid rgba(255,255,255,0.25);
+}
+.mean-container .mean-nav ul li a:hover { 
+background: #252525;
+background: rgba(255,255,255,0.1); 
+}
+.mean-container .mean-push { 
+float: left;
+width: 100%;
+padding: 0;
+margin: 0;
+clear: both; 
+}
+.mean-nav .wrapper {
+width: 100%;
+padding: 0;
+margin: 0;
+}
