@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.2
+ * jQuery meanMenu v1.3
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -133,6 +133,12 @@
                     
                     //hide mean-nav ul
                     jQuery('.mean-nav ul').hide();
+                    // hide sub nav
+                    if(meanShowChildren) {
+                    	jQuery('.mean-nav ul ul').show();
+                    } else {
+                    	jQuery('.mean-nav ul ul').hide();
+                    }
                     $navreveal.removeClass("meanclose");
                     $navreveal.toggle(
                     function (e) {
@@ -142,28 +148,13 @@
                         $navreveal.css("text-indent", "0");
                         $navreveal.css("font-size", meanMenuCloseSize);
                         meanInner();
-                        // hide sub nav
-                        if(meanShowChildren) {
-                        	jQuery('.mean-nav ul ul').show();
-                        } else {
-                        	jQuery('.mean-nav ul ul').hide();
-                        }
-                        
-                        jQuery('.mean-nav ul').slideDown();
-                                                
+                        jQuery('.mean-nav ul:first').slideDown();                                                
                     }, function (e) {
                         e.preventDefault;
                         $navreveal.html(meanMenuOpen);
                         $navreveal.toggleClass("meanclose");
                         meanInner();
-                        // hide sub nav
-                        if(meanShowChildren) {
-                        	jQuery('.mean-nav ul ul').show();
-                        } else {
-                        	jQuery('.mean-nav ul ul').hide();
-                        }
-                        
-                        jQuery('.mean-nav ul').slideUp();
+                        jQuery('.mean-nav ul:first').slideUp();
                         
                     });
                 } else {

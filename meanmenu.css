@@ -53,6 +53,9 @@ width: 100%;
 background: #0c1923;
 margin-top: 33px;
 }
+.mean-container .mean-nav ul {
+width: 100%;
+}
 .mean-container .mean-nav ul li a {
 display: block;
 float: left;
