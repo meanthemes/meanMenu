@@ -82,6 +82,10 @@ filter: alpha(opacity=75);
 text-shadow: none !important;
 visibility: visible;
 }
+.mean-container .mean-nav ul li li li a {
+width: 70%;
+padding: 1em 15%;
+}
 .mean-container .mean-nav ul li li:first-child a {
 border-top: 1px solid #f1f1f1;
 border-top: 1px solid rgba(255,255,255,0.25);
