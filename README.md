@@ -12,7 +12,7 @@ in your HTML e.g.
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script> 
     <script src="assets/js/plugins/jquery.meanmenu.js"></script> 
     
-Then add the CSS for this after all of your other CSS in the <head> section.
+Then add the CSS for this after all of your other CSS in the &lt;head&gt; section.
 
 	<link rel="stylesheet" href="meanmenu.css" media="all" />
 
