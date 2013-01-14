@@ -28,7 +28,7 @@ meanMenu: "header nav"
 - Target the current HTML markup you wish to replace
 
 meanMenuClose: "X", 
--Single character you want to represent the close menu button
+- Single character you want to represent the close menu button
 
 meanMenuCloseSize: "18px", 
 - Set font size of close button
