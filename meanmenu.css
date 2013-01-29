@@ -55,6 +55,8 @@ background: #0c1923;
 margin-top: 33px;
 }
 .mean-container .mean-nav ul {
+padding: 0;
+margin: 0;
 width: 100%;
 }
 .mean-container .mean-nav ul li a {

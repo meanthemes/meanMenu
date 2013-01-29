@@ -19,7 +19,7 @@ Then add the CSS for this after all of your other CSS in the &lt;head&gt; sectio
 Then in your usual document.ready, this is working under the assumption your navigation is in <header><nav> structure...
 
     jQuery(document).ready(function () {
-    	jQuery.meanmenu();
+    	jQuery('header nav').meanmenu();
     });
 
 There are the following options (Options are shown with their defaults)...
