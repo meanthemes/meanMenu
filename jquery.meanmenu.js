@@ -107,6 +107,7 @@
             function meanOriginal() {
             	jQuery('.mean-bar,.mean-push').replaceWith('');
             	jQuery('body').removeClass("mean-container");
+				jQuery(meanMenu).children().addClass(meanRemoveClass);
             	jQuery(meanMenu).show();
             }
             
