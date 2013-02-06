@@ -35,7 +35,8 @@
             meanRevealHoverColour: "", // override CSS colours for the reveal hover
             meanScreenWidth: "480", // set the screen width you want meanmenu to kick in at
             meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
-            meanShowChildren: true // true to show children in the menu, false to hide them
+            meanShowChildren: true, // true to show children in the menu, false to hide them
+			meanRemoveClass : '' // set a class that will be removed from mean menu to help clean up css
         };
         var options = $.extend(defaults, options);
         
@@ -56,6 +57,7 @@
             var meanNavPush = options.meanNavPush;
             var meanTarget = jQuery(this);
             var meanRevealClass = ".meanmenu-reveal";
+            var meanRemoveClass = options.meanRemoveClass;
             meanShowChildren = options.meanShowChildren;
                         
             //detect known mobile/tablet usage
@@ -116,6 +118,8 @@
                 	jQuery('.mean-container').prepend('<div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="'+meanStyles+'">Show Navigation</a><nav class="mean-nav"></nav></div>');
                     
                     //push meanMenu navigation into .mean-nav
+
+					jQuery(meanMenu).children().removeClass(meanRemoveClass);
                     var meanMenuContents = jQuery(meanMenu).html();
                     jQuery('.mean-nav').html(meanMenuContents);
                     
