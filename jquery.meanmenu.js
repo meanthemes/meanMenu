@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.3
+ * jQuery meanMenu v1.4
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -79,6 +79,8 @@
             	}
             }
             
+            open = false;
+            
             if (meanRevealPosition == "right") {
                 meanRevealPos = "right:" + meanRevealPositionDistance + ";left:auto;";
             }
@@ -103,7 +105,7 @@
             
             //re-instate original nav (and call this on window.width functions)
             function meanOriginal() {
-            	jQuery('.mean-bar,.mean-push').replaceWith('');
+            	jQuery('.mean-bar,.mean-push').remove();
             	jQuery('body').removeClass("mean-container");
             	jQuery(meanMenu).show();
             }
@@ -140,23 +142,25 @@
                     	jQuery('.mean-nav ul ul').hide();
                     }
                     $navreveal.removeClass("meanclose");
-                    $navreveal.toggle(
-                    function (e) {
-                        e.preventDefault;
-                        $navreveal.toggleClass("meanclose");
-                        $navreveal.css("text-align", "center");
-                        $navreveal.css("text-indent", "0");
-                        $navreveal.css("font-size", meanMenuCloseSize);
-                        meanInner();
-                        jQuery('.mean-nav ul:first').slideDown();                                                
-                    }, function (e) {
-                        e.preventDefault;
-                        $navreveal.html(meanMenuOpen);
-                        $navreveal.toggleClass("meanclose");
-                        meanInner();
-                        jQuery('.mean-nav ul:first').slideUp();
-                        
+                    jQuery($navreveal).click(function(){
+	            		if(open == false) {
+	                        $navreveal.toggleClass("meanclose");
+	                        $navreveal.css("text-align", "center");
+	                        $navreveal.css("text-indent", "0");
+	                        $navreveal.css("font-size", meanMenuCloseSize);
+	                        meanInner();
+	                        jQuery('.mean-nav ul:first').slideDown(); 
+	                        open = true;
+	                    } else {
+	                    	$navreveal.html(meanMenuOpen);
+	                    	$navreveal.toggleClass("meanclose");
+	                    	meanInner();
+	                    	jQuery('.mean-nav ul:first').slideUp();
+	                    	open = false;
+	                    }    
                     });
+                    
+                    
                 } else {
                 	meanOriginal();
                 }	
