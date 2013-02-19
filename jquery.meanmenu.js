@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.4
+ * jQuery meanMenu v1.5
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -108,6 +108,7 @@
             	jQuery('.mean-bar,.mean-push').remove();
             	jQuery('body').removeClass("mean-container");
             	jQuery(meanMenu).show();
+            	open = false;
             }
             
             //navigation reveal 
