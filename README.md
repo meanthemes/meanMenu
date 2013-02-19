@@ -3,7 +3,7 @@ meanMenu
 
 A menu system for responsive designs, media query independent.
 
-Just include the jQuery library (http://jquery.com)
+Just include the jQuery library (http://jquery.com) **- Please note only 1.8.3 and below works as there have been major changes in the latest jQuery release.**
 
 Then this file (jquery.meanmenu.js)
 
