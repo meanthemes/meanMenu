@@ -3,13 +3,13 @@ meanMenu
 
 A menu system for responsive designs, media query independent.
 
-Just include the jQuery library (http://jquery.com) **- Please note I've just updated the code to run with 1.91 of jQuery, we've also tested backwards to 1.7.1 - please let me know if you find any bugs with new or old.**
+Just include the jQuery library (http://jquery.com) **- Please note I've just updated the code to run with 1.9.1 of jQuery, we've also tested backwards to 1.7.1 - please let me know if you find any bugs with new or old.**
 
 Then this file (jquery.meanmenu.js)
 
 in your HTML e.g.
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
     <script src="assets/js/plugins/jquery.meanmenu.js"></script> 
     
 Then add the CSS for this after all of your other CSS in the &lt;head&gt; section.
