@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.5
+ * jQuery meanMenu v1.6
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -79,7 +79,7 @@
             	}
             }
             
-            open = false;
+            isOpen = false;
             
             if (meanRevealPosition == "right") {
                 meanRevealPos = "right:" + meanRevealPositionDistance + ";left:auto;";
@@ -108,7 +108,7 @@
             	jQuery('.mean-bar,.mean-push').remove();
             	jQuery('body').removeClass("mean-container");
             	jQuery(meanMenu).show();
-            	open = false;
+            	isOpen = false;
             }
             
             //navigation reveal 
@@ -144,20 +144,20 @@
                     }
                     $navreveal.removeClass("meanclose");
                     jQuery($navreveal).click(function(){
-	            		if(open == false) {
+	            		if(isOpen == false) {
 	                        $navreveal.toggleClass("meanclose");
 	                        $navreveal.css("text-align", "center");
 	                        $navreveal.css("text-indent", "0");
 	                        $navreveal.css("font-size", meanMenuCloseSize);
 	                        meanInner();
 	                        jQuery('.mean-nav ul:first').slideDown(); 
-	                        open = true;
+	                        isOpen = true;
 	                    } else {
 	                    	$navreveal.html(meanMenuOpen);
 	                    	$navreveal.toggleClass("meanclose");
 	                    	meanInner();
 	                    	jQuery('.mean-nav ul:first').slideUp();
-	                    	open = false;
+	                    	isOpen = false;
 	                    }    
                     });
                     

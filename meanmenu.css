@@ -58,6 +58,7 @@ margin-top: 33px;
 padding: 0;
 margin: 0;
 width: 100%;
+list-style-type: none;
 }
 .mean-container .mean-nav ul li a {
 display: block;
