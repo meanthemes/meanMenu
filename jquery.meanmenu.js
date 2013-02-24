@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.6
+ * jQuery meanMenu v1.7
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@
 (function ($) {
     $.fn.meanmenu = function (options) {
         var defaults = {
-            meanMenu: "header nav", // Target the current HTML markup you wish to replace
+            meanMenuTarget: jQuery(this), // Target the current HTML markup you wish to replace
             meanMenuClose: "X", // single character you want to represent the close menu button
             meanMenuCloseSize: "18px", // set font size of close button
             meanMenuOpen: "<span /><span /><span />", // text/markup you want when menu is closed
