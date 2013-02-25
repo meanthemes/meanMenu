@@ -57,6 +57,6 @@ meanNavPush: ""
 meanShowChildren: true
 - true to show children in the menu, false to hide them
 
-meanShowAttrs: false
+meanRemoveAttrs: false
 - true to remove classes and IDs, false to keep them
 
