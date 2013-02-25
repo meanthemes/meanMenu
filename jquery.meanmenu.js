@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.7.1
+ * jQuery meanMenu v1.7.2
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,8 @@
             meanRevealHoverColour: "", // override CSS colours for the reveal hover
             meanScreenWidth: "480", // set the screen width you want meanmenu to kick in at
             meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
-            meanShowChildren: true // true to show children in the menu, false to hide them
+            meanShowChildren: true, // true to show children in the menu, false to hide them
+            meanRemoveAttrs: false // true to remove classes and IDs, false to keep them
         };
         var options = $.extend(defaults, options);
         
@@ -57,6 +58,7 @@
             var meanTarget = jQuery(this);
             var meanRevealClass = ".meanmenu-reveal";
             meanShowChildren = options.meanShowChildren;
+            var meanRemoveAttrs = options.meanRemoveAttrs;
                         
             //detect known mobile/tablet usage
             if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i))) {
@@ -121,6 +123,14 @@
                     //push meanMenu navigation into .mean-nav
                     var meanMenuContents = jQuery(meanMenu).html();
                     jQuery('.mean-nav').html(meanMenuContents);
+            		
+            		// remove all classes from EVERYTHING inside meanmenu nav
+            		if(meanRemoveAttrs) {
+            			jQuery('nav.mean-nav *').each(function(index) {
+            				jQuery(this).removeAttr("class");
+            				jQuery(this).removeAttr("id");
+            			});
+            		}
                     
                     // push in a holder div (this can be used if removal of nav is causing layout issues)
                     jQuery(meanMenu).before('<div class="mean-push" />');
@@ -166,6 +176,10 @@
                 	meanOriginal();
                 }	
             } 
+            
+            
+            
+            
             showMeanMenu();
             if (!isMobile) {
                 //reset menu on resize above meanScreenWidth
