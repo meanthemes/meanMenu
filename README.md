@@ -24,9 +24,6 @@ Then in your usual document.ready, this is working under the assumption your nav
 
 There are the following options (Options are shown with their defaults)...
 
-meanMenu: "header nav"
-- Target the current HTML markup you wish to replace
-
 meanMenuClose: "X", 
 - Single character you want to represent the close menu button
 
