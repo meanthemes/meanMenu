@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.7
+ * jQuery meanMenu v1.7.1
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -43,7 +43,7 @@
         currentWidth = jQuery(window).width();
 
         return this.each(function () {
-            var meanMenu = options.meanMenu;
+            var meanMenu = options.meanMenuTarget;
             var meanReveal = options.meanReveal;
             var meanMenuClose = options.meanMenuClose;
             var meanMenuCloseSize = options.meanMenuCloseSize;
