@@ -21,10 +21,12 @@ width: 100%;
 position: relative;
 background: #0c1923;
 padding: 4px 0;
+/* min-height modifies the thickness of the menu bar */
 min-height: 33px;
 z-index: 999999;
 }
 .mean-container a.meanmenu-reveal {
+	/* modifies the width and height of the 3 bars together */
 width: 22px;
 height: 22px;
 padding: 10px 10px 8px 10px;
@@ -45,6 +47,7 @@ font-weight: 700;
 .mean-container a.meanmenu-reveal span {
 display: block;
 background: #fff;
+/* height modifies the thickness of the menu icon's bars */
 height: 3px;
 margin-top: 3px;
 }
@@ -52,6 +55,7 @@ margin-top: 3px;
 float: left;
 width: 100%;
 background: #0c1923;
+/* margin-top modifies the distance of the menu listings from the top when opened */
 margin-top: 33px;
 }
 .mean-container .mean-nav ul {
