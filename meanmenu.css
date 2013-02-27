@@ -22,14 +22,14 @@ position: relative;
 background: #0c1923;
 padding: 4px 0;
 /* min-height modifies the thickness of the menu bar */
-min-height: 33px;
+min-height: 100px;
 z-index: 999999;
 }
 .mean-container a.meanmenu-reveal {
 	/* modifies the overall width and height of the menu icon */
-width: 22px;
-height: 22px;
-padding: 10px 10px 8px 10px;
+width: 45px;
+height: 66%;
+padding: 30px 30px 8px 10px;
 position: absolute;
 top: 0;
 right: 0;
@@ -38,7 +38,7 @@ color: #fff;
 text-decoration: none;
 font-size: 16px;
 text-indent: -9999em;
-line-height: 22px;
+line-height: 3em;
 font-size: 1px;
 display: block;
 font-family: Arial, Helvetica, sans-serif;
@@ -48,7 +48,7 @@ font-weight: 700;
 display: block;
 background: #fff;
 /* height modifies the thickness of the menu icon's bars */
-height: 3px;
+height: 9px;
 margin-top: 3px;
 }
 .mean-container .mean-nav { 
