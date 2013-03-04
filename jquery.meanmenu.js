@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.7.2
+ * jQuery meanMenu v1.7.3
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -81,7 +81,8 @@
             	}
             }
             
-            isOpen = false;
+            menuOn = false;
+            meanMenuExist = false;
             
             if (meanRevealPosition == "right") {
                 meanRevealPos = "right:" + meanRevealPositionDistance + ";left:auto;";
@@ -110,12 +111,14 @@
             	jQuery('.mean-bar,.mean-push').remove();
             	jQuery('body').removeClass("mean-container");
             	jQuery(meanMenu).show();
-            	isOpen = false;
+            	menuOn = false;
+            	meanMenuExist = false;
             }
             
             //navigation reveal 
             function showMeanMenu() {
                 if (currentWidth <= meanScreenWidth) {
+                	meanMenuExist = true;
                 	// add class to body so we don't need to worry about media queries here, all CSS is wrapped in '.mean-container'
                 	jQuery('body').addClass("mean-container");
                 	jQuery('.mean-container').prepend('<div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="'+meanStyles+'">Show Navigation</a><nav class="mean-nav"></nav></div>');
@@ -154,20 +157,20 @@
                     }
                     $navreveal.removeClass("meanclose");
                     jQuery($navreveal).click(function(){
-	            		if(isOpen == false) {
+	            		if(menuOn == false) {
 	                        $navreveal.toggleClass("meanclose");
 	                        $navreveal.css("text-align", "center");
 	                        $navreveal.css("text-indent", "0");
 	                        $navreveal.css("font-size", meanMenuCloseSize);
 	                        meanInner();
 	                        jQuery('.mean-nav ul:first').slideDown(); 
-	                        isOpen = true;
+	                        menuOn = true;
 	                    } else {
 	                    	$navreveal.html(meanMenuOpen);
 	                    	$navreveal.toggleClass("meanclose");
 	                    	meanInner();
 	                    	jQuery('.mean-nav ul:first').slideUp();
-	                    	isOpen = false;
+	                    	menuOn = false;
 	                    }    
                     });
                     
@@ -176,9 +179,6 @@
                 	meanOriginal();
                 }	
             } 
-            
-            
-            
             
             showMeanMenu();
             if (!isMobile) {
@@ -202,6 +202,16 @@
        		// adjust menu positioning on centered navigation     
             window.onorientationchange = function() {
             	meanCentered();
+            	// get browser width
+            	currentWidth = jQuery(window).width();
+            	if (currentWidth >= meanScreenWidth) {
+            		meanOriginal();
+            	}
+            	if (currentWidth <= meanScreenWidth) {
+            		if (meanMenuExist == false) {
+            			showMeanMenu();
+            		}
+            	}
             }
             
         });
