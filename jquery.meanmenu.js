@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v1.7.3
+ * jQuery meanMenu v1.7.4
  * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@
         var options = $.extend(defaults, options);
         
         // get browser width
-        currentWidth = jQuery(window).width();
+        currentWidth = window.innerWidth || document.documentElement.clientWidth;
 
         return this.each(function () {
             var meanMenu = options.meanMenuTarget;
@@ -55,19 +55,23 @@
             var meanRevealHoverColour = options.meanRevealHoverColour;
             var meanScreenWidth = options.meanScreenWidth;
             var meanNavPush = options.meanNavPush;
-            var meanTarget = jQuery(this);
             var meanRevealClass = ".meanmenu-reveal";
             meanShowChildren = options.meanShowChildren;
             var meanRemoveAttrs = options.meanRemoveAttrs;
                         
             //detect known mobile/tablet usage
-            if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i))) {
+            if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {
                 var isMobile = true;
+            }
+            
+            if ( (navigator.userAgent.match(/MSIE 8/i)) || (navigator.userAgent.match(/MSIE 7/i)) ) {
+            	// add scrollbar for IE7 & 8 to stop breaking resize function on small content sites
+                jQuery('html').css("overflow-y" , "scroll");
             }
             
             function meanCentered() {
             	if (meanRevealPosition == "center") {
-	            	var newWidth = jQuery(window).width();
+	            	var newWidth = window.innerWidth || document.documentElement.clientWidth;
 	            	var meanCenter = ( (newWidth/2)-22 )+"px";
 	            	meanRevealPos = "left:" + meanCenter + ";right:auto;";
 	            	
@@ -98,8 +102,7 @@
 
             function meanInner() {
                 // get last class name
-                navOpen = $navreveal.attr('class').split(' ').slice(-1);
-                if (navOpen == "meanclose") {
+                if (jQuery($navreveal).is(".meanmenu-reveal.meanclose")) {
                     $navreveal.html(meanMenuClose);
                 } else {
                     $navreveal.html(meanMenuOpen);
@@ -129,7 +132,7 @@
             		
             		// remove all classes from EVERYTHING inside meanmenu nav
             		if(meanRemoveAttrs) {
-            			jQuery('nav.mean-nav *').each(function(index) {
+            			jQuery('nav.mean-nav *').each(function() {
             				jQuery(this).removeAttr("class");
             				jQuery(this).removeAttr("id");
             			});
@@ -156,35 +159,31 @@
                     	jQuery('.mean-nav ul ul').hide();
                     }
                     $navreveal.removeClass("meanclose");
-                    jQuery($navreveal).click(function(){
+                    jQuery($navreveal).click(function(e){
+                    	e.preventDefault();
 	            		if(menuOn == false) {
-	                        $navreveal.toggleClass("meanclose");
 	                        $navreveal.css("text-align", "center");
 	                        $navreveal.css("text-indent", "0");
 	                        $navreveal.css("font-size", meanMenuCloseSize);
-	                        meanInner();
 	                        jQuery('.mean-nav ul:first').slideDown(); 
 	                        menuOn = true;
 	                    } else {
-	                    	$navreveal.html(meanMenuOpen);
-	                    	$navreveal.toggleClass("meanclose");
-	                    	meanInner();
 	                    	jQuery('.mean-nav ul:first').slideUp();
 	                    	menuOn = false;
 	                    }    
+                        $navreveal.toggleClass("meanclose");
+                        meanInner();
                     });
-                    
                     
                 } else {
                 	meanOriginal();
                 }	
             } 
             
-            showMeanMenu();
             if (!isMobile) {
                 //reset menu on resize above meanScreenWidth
                 jQuery(window).resize(function () {
-                    currentWidth = jQuery(window).width();
+                    currentWidth = window.innerWidth || document.documentElement.clientWidth;
                     if (currentWidth > meanScreenWidth) {
                         meanOriginal();
                     } else {
@@ -203,7 +202,7 @@
             window.onorientationchange = function() {
             	meanCentered();
             	// get browser width
-            	currentWidth = jQuery(window).width();
+            	currentWidth = window.innerWidth || document.documentElement.clientWidth;
             	if (currentWidth >= meanScreenWidth) {
             		meanOriginal();
             	}
@@ -213,7 +212,8 @@
             		}
             	}
             }
-            
+           // run main menuMenu function on load
+           showMeanMenu(); 
         });
     };
 })(jQuery);
