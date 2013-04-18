@@ -3,6 +3,9 @@ meanMenu v2.0
 
 A menu system for responsive designs, media query independent.
 
+Live Demo:
+<a href="http://www.meanthemes.com/demo/meanmenu/demo.html">http://www.meanthemes.com/demo/meanmenu/demo.html</a>
+
 **Now with expanding/contracting sub navigation :)**
 
 Just include the jQuery library (http://jquery.com) 
