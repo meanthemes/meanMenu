@@ -3,7 +3,7 @@ meanMenu v2.0
 
 A menu system for responsive designs, media query independent.
 
-*** Now with expanding/contracting sub navigation :)***
+***Now with expanding/contracting sub navigation :)***
 
 Just include the jQuery library (http://jquery.com) 
 
