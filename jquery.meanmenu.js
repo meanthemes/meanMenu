@@ -1,6 +1,6 @@
 /**
- * jQuery meanMenu v1.7.4
- * Copyright (C) 2012 Chris Wharton (themes@meanthemes.com)
+ * jQuery meanMenu v2.0
+ * Copyright (C) 2012-2013 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,6 +36,9 @@
             meanScreenWidth: "480", // set the screen width you want meanmenu to kick in at
             meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
             meanShowChildren: true, // true to show children in the menu, false to hide them
+            meanExpandableChildren: true, // true to allow expand/collapse children
+            meanExpand: "+", // single character you want to represent the expand for ULs
+            meanContract: "-", // single character you want to represent the contract for ULs
             meanRemoveAttrs: false // true to remove classes and IDs, false to keep them
         };
         var options = $.extend(defaults, options);
@@ -57,6 +60,9 @@
             var meanNavPush = options.meanNavPush;
             var meanRevealClass = ".meanmenu-reveal";
             meanShowChildren = options.meanShowChildren;
+            meanExpandableChildren = options.meanExpandableChildren;
+            var meanExpand = options.meanExpand;
+            var meanContract = options.meanContract;
             var meanRemoveAttrs = options.meanRemoveAttrs;
                         
             //detect known mobile/tablet usage
@@ -152,12 +158,41 @@
                     
                     //hide mean-nav ul
                     jQuery('.mean-nav ul').hide();
+                    
                     // hide sub nav
-                    if(meanShowChildren) {
-                    	jQuery('.mean-nav ul ul').show();
-                    } else {
-                    	jQuery('.mean-nav ul ul').hide();
-                    }
+	                   if(meanShowChildren) {
+	                   		// allow expandable sub nav(s)
+	                       if(meanExpandableChildren){
+		                       jQuery('.mean-nav ul ul').each(function() {
+		                           if(jQuery(this).children().length){
+		                               jQuery(this,'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: '+ meanMenuCloseSize +'">'+ meanExpand +'</a>');                               
+		                           }
+		                       });
+		                       jQuery('.mean-expand').on("click",function(e){
+		                       		e.preventDefault();
+		                       	   if (jQuery(this).hasClass("mean-clicked")) {
+		                       	   		jQuery(this).text(meanExpand);
+		                       	   		console.log("Been clicked");
+		                               jQuery(this).prev('ul').slideUp(300, function(){
+		                                  
+		                               });
+		                           } else {
+		                           		jQuery(this).text(meanContract);
+		                           		jQuery(this).prev('ul').slideDown(300, function(){
+		                           		});
+		                           }   
+		                           jQuery(this).toggleClass("mean-clicked"); 
+		                       });     
+	                       } else {
+	                           jQuery('.mean-nav ul ul').show();   
+	                       }
+	                   } else {
+	                       jQuery('.mean-nav ul ul').hide();
+	                   }
+	                   
+                    // add last class to tidy up borders
+                    jQuery('.mean-nav ul li').last().addClass('mean-last');
+                
                     $navreveal.removeClass("meanclose");
                     jQuery($navreveal).click(function(e){
                     	e.preventDefault();
