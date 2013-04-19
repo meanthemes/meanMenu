@@ -3,6 +3,8 @@ meanMenu v2.0
 
 A menu system for responsive designs, media query independent.
 
+And yes, it works with jQuery 2.0.
+
 Live Demo:
 <a href="http://www.meanthemes.com/demo/meanmenu/demo.html">http://www.meanthemes.com/demo/meanmenu/demo.html</a>
 
