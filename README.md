@@ -1,14 +1,17 @@
 meanMenu v2.0
 ===========
 
-A menu system for responsive designs, media query independent.
+A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
+
+**Please note: This is not a menu system replacement. It is simply a lightweight piece of jQuery to convert a standard navigation into a mobile/tablet navigation.**
+
+**If you are looking for drop down functionality on the desktop, MeanMenu doesn't do it. Use Superfish as well as MeanMenu.**
 
 And yes, it works with jQuery 2.0 - obviously IE 7 & 8 will not work.
 
 Live Demo:
 <a href="http://www.meanthemes.com/demo/meanmenu/demo.html">http://www.meanthemes.com/demo/meanmenu/demo.html</a>
 
-**Now with expanding/contracting sub navigation :)**
 
 Just include the jQuery library (http://jquery.com) 
 
