@@ -5,7 +5,7 @@ A menu system for converting a standard menu into a mobile/tablet responsive men
 
 **Please note: This is not a menu system replacement. It is simply a lightweight piece of jQuery to convert a standard navigation into a mobile/tablet navigation.**
 
-**If you are looking for drop down functionality on the desktop, MeanMenu doesn't do it. Use <a title="Superfish Drop down menus" href="http://plugins.jquery.com/superfish/">Superfish</a> as well as MeanMenu.**
+**If you are looking for drop down functionality on the desktop, MeanMenu doesn't do it. Use <a title="Superfish Drop down menus" href="http://plugins.jquery.com/superfish/">Superfish</a> as well as MeanMenu. You can see Superfish + MeanMenu on all of our themes, for example <a title="Literary Theme" href="http://www.meanthemes.com/theme/literary/">Literary</a>.**
 
 And yes, it works with jQuery 2.0 - obviously IE 7 & 8 will not work.
 
