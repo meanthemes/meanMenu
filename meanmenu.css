@@ -24,6 +24,11 @@ padding: 4px 0;
 min-height: 42px;
 z-index: 999999;
 }
+.mean-container .mean-bar * {
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+}
 .mean-container a.meanmenu-reveal {
 width: 22px;
 height: 22px;
