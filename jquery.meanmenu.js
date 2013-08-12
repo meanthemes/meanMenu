@@ -26,6 +26,7 @@
     $.fn.meanmenu = function (options) {
         var defaults = {
             meanMenuTarget: jQuery(this), // Target the current HTML markup you wish to replace
+            meanMenuContainer: 'body', // Selector where the menu will be placed
             meanMenuClose: "X", // single character you want to represent the close menu button
             meanMenuCloseSize: "18px", // set font size of close button
             meanMenuOpen: "<span /><span /><span />", // text/markup you want when menu is closed
@@ -48,6 +49,7 @@
 
         return this.each(function () {
             var meanMenu = options.meanMenuTarget;
+            var meanContainer = options.meanMenuContainer;
             var meanReveal = options.meanReveal;
             var meanMenuClose = options.meanMenuClose;
             var meanMenuCloseSize = options.meanMenuCloseSize;
@@ -118,7 +120,7 @@
             //re-instate original nav (and call this on window.width functions)
             function meanOriginal() {
             	jQuery('.mean-bar,.mean-push').remove();
-            	jQuery('body').removeClass("mean-container");
+            	jQuery(meanContainer).removeClass("mean-container");
             	jQuery(meanMenu).show();
             	menuOn = false;
             	meanMenuExist = false;
@@ -129,7 +131,7 @@
                 if (currentWidth <= meanScreenWidth) {
                 	meanMenuExist = true;
                 	// add class to body so we don't need to worry about media queries here, all CSS is wrapped in '.mean-container'
-                	jQuery('body').addClass("mean-container");
+                	jQuery(meanContainer).addClass("mean-container");
                 	jQuery('.mean-container').prepend('<div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="'+meanStyles+'">Show Navigation</a><nav class="mean-nav"></nav></div>');
                     
                     //push meanMenu navigation into .mean-nav
