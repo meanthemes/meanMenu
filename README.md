@@ -1,4 +1,4 @@
-meanMenu v2.0
+meanMenu v2.0.1
 ===========
 
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
@@ -33,6 +33,10 @@ Then in your usual document.ready, this is working under the assumption your nav
     });
 
 There are the following options (Options are shown with their defaults)...
+
+meanMenuContainer: 'body'
+
+- Choose where meanmenu will be placed within the HTML
 
 meanMenuClose: "X"
 
