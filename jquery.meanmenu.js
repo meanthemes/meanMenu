@@ -1,5 +1,5 @@
 /**
- * jQuery meanMenu v2.0.1
+ * jQuery meanMenu v2.0.2
  * Copyright (C) 2012-2013 Chris Wharton (themes@meanthemes.com)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -174,14 +174,10 @@
 		                       		e.preventDefault();
 		                       	   if (jQuery(this).hasClass("mean-clicked")) {
 		                       	   		jQuery(this).text(meanExpand);
-		                       	   		console.log("Been clicked");
-		                               jQuery(this).prev('ul').slideUp(300, function(){
-		                                  
-		                               });
+		                               jQuery(this).prev('ul').slideUp(300, function(){});
 		                           } else {
 		                           		jQuery(this).text(meanContract);
-		                           		jQuery(this).prev('ul').slideDown(300, function(){
-		                           		});
+		                           		jQuery(this).prev('ul').slideDown(300, function(){});
 		                           }   
 		                           jQuery(this).toggleClass("mean-clicked"); 
 		                       });     
