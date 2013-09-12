@@ -1,7 +1,9 @@
-/**
- * jQuery meanMenu v2.0.2
- * Copyright (C) 2012-2013 Chris Wharton (themes@meanthemes.com)
+/*!
+ * jQuery meanMenu v2.0.3
+ * @Copyright (C) 2012-2013 Chris Wharton (https://github.com/weare2ndfloor/meanMenu)
  *
+ */
+/*
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -23,6 +25,7 @@
  *
  */
 (function ($) {
+	"use strict";
     $.fn.meanmenu = function (options) {
         var defaults = {
             meanMenuTarget: jQuery(this), // Target the current HTML markup you wish to replace
@@ -45,7 +48,7 @@
         var options = $.extend(defaults, options);
         
         // get browser width
-        currentWidth = window.innerWidth || document.documentElement.clientWidth;
+        var currentWidth = window.innerWidth || document.documentElement.clientWidth;
 
         return this.each(function () {
             var meanMenu = options.meanMenuTarget;
@@ -61,8 +64,8 @@
             var meanScreenWidth = options.meanScreenWidth;
             var meanNavPush = options.meanNavPush;
             var meanRevealClass = ".meanmenu-reveal";
-            meanShowChildren = options.meanShowChildren;
-            meanExpandableChildren = options.meanExpandableChildren;
+            var meanShowChildren = options.meanShowChildren;
+            var meanExpandableChildren = options.meanExpandableChildren;
             var meanExpand = options.meanExpand;
             var meanContract = options.meanContract;
             var meanRemoveAttrs = options.meanRemoveAttrs;
@@ -93,21 +96,22 @@
             	}
             }
             
-            menuOn = false;
-            meanMenuExist = false;
+            var menuOn = false;
+            var meanMenuExist = false;
             
             if (meanRevealPosition == "right") {
                 meanRevealPos = "right:" + meanRevealPositionDistance + ";left:auto;";
             }
             if (meanRevealPosition == "left") {
-                meanRevealPos = "left:" + meanRevealPositionDistance + ";right:auto;";
+                var meanRevealPos = "left:" + meanRevealPositionDistance + ";right:auto;";
             } 
             // run center function	
             meanCentered();
             
             // set all styles for mean-reveal
-            meanStyles = "background:"+meanRevealColour+";color:"+meanRevealColour+";"+meanRevealPos;
-
+            var meanStyles = "background:"+meanRevealColour+";color:"+meanRevealColour+";"+meanRevealPos;
+			var $navreveal = "";
+			
             function meanInner() {
                 // get last class name
                 if (jQuery($navreveal).is(".meanmenu-reveal.meanclose")) {
