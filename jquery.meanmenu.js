@@ -1,5 +1,5 @@
 /*!
- * jQuery meanMenu v2.0.3
+ * jQuery meanMenu v2.0.4
  * @Copyright (C) 2012-2013 Chris Wharton (https://github.com/weare2ndfloor/meanMenu)
  *
  */
@@ -43,7 +43,8 @@
             meanExpandableChildren: true, // true to allow expand/collapse children
             meanExpand: "+", // single character you want to represent the expand for ULs
             meanContract: "-", // single character you want to represent the contract for ULs
-            meanRemoveAttrs: false // true to remove classes and IDs, false to keep them
+            meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
+            onePage: false // set to true for one page sites
         };
         var options = $.extend(defaults, options);
         
@@ -69,6 +70,7 @@
             var meanExpand = options.meanExpand;
             var meanContract = options.meanContract;
             var meanRemoveAttrs = options.meanRemoveAttrs;
+            var onePage = options.onePage;
                         
             //detect known mobile/tablet usage
             if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {
@@ -198,7 +200,7 @@
                     $navreveal.removeClass("meanclose");
                     jQuery($navreveal).click(function(e){
                     	e.preventDefault();
-	            		if(menuOn == false) {
+	            		if( menuOn == false ) {
 	                        $navreveal.css("text-align", "center");
 	                        $navreveal.css("text-indent", "0");
 	                        $navreveal.css("font-size", meanMenuCloseSize);
@@ -211,6 +213,19 @@
                         $navreveal.toggleClass("meanclose");
                         meanInner();
                     });
+                    
+                    // for one page websites, reset all variables...
+                    if ( onePage ) {
+                    
+						jQuery('.mean-nav ul > li > a:first-child').on( "click" , function (e) {
+							e.preventDefault();
+							jQuery('.mean-nav ul:first').slideUp();
+							menuOn = false;
+							jQuery($navreveal).toggleClass("meanclose").html(meanMenuOpen);
+						
+						});
+                    
+                    }
                     
                 } else {
                 	meanOriginal();

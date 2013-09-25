@@ -1,4 +1,4 @@
-MeanMenu v2.0.3
+MeanMenu v2.0.4
 ===========
 
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
@@ -92,4 +92,8 @@ meanContract: "-"
 
 meanRemoveAttrs: false
 - true to remove classes and IDs, false to keep them
+
+onePage: false 
+
+- set to true for one page sites, the navigation will close back up on itself on click
 
