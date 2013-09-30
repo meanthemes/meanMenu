@@ -1,4 +1,4 @@
-MeanMenu v2.0.4
+MeanMenu v2.0.5
 ===========
 
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.

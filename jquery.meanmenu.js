@@ -1,5 +1,5 @@
 /*!
- * jQuery meanMenu v2.0.4
+ * jQuery meanMenu v2.0.5
  * @Copyright (C) 2012-2013 Chris Wharton (https://github.com/weare2ndfloor/meanMenu)
  *
  */
@@ -217,8 +217,7 @@
                     // for one page websites, reset all variables...
                     if ( onePage ) {
                     
-						jQuery('.mean-nav ul > li > a:first-child').on( "click" , function (e) {
-							e.preventDefault();
+						jQuery('.mean-nav ul > li > a:first-child').on( "click" , function () {
 							jQuery('.mean-nav ul:first').slideUp();
 							menuOn = false;
 							jQuery($navreveal).toggleClass("meanclose").html(meanMenuOpen);
