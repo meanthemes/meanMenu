@@ -161,3 +161,8 @@ a.meanmenu-reveal {
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
+
+
+.mean-remove {
+	display: none !important;
+}

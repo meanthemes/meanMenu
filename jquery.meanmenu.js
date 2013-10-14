@@ -83,7 +83,7 @@
             	// add scrollbar for IE7 & 8 to stop breaking resize function on small content sites
                 jQuery('html').css("overflow-y" , "scroll");
             }
-            
+                        
             function meanCentered() {
             	if (meanRevealPosition == "center") {
 	            	var newWidth = window.innerWidth || document.documentElement.clientWidth;
@@ -132,12 +132,13 @@
             	jQuery(meanMenu).show();
             	menuOn = false;
             	meanMenuExist = false;
-            	jQuery(removeElements).show();
+            	jQuery(removeElements).removeClass('mean-remove');
             }
             
             //navigation reveal 
             function showMeanMenu() {
                 if (currentWidth <= meanScreenWidth) {
+		            jQuery(removeElements).addClass('mean-remove');        
                 	meanMenuExist = true;
                 	// add class to body so we don't need to worry about media queries here, all CSS is wrapped in '.mean-container'
                 	jQuery(meanContainer).addClass("mean-container");
@@ -149,7 +150,7 @@
             		
             		// remove all classes from EVERYTHING inside meanmenu nav
             		if(meanRemoveAttrs) {
-            			jQuery('nav.mean-nav *').each(function() {
+            			jQuery('nav.mean-nav ul, nav.mean-nav ul *').each(function() {
             				jQuery(this).removeAttr("class");
             				jQuery(this).removeAttr("id");
             			});
@@ -215,7 +216,7 @@
 	                    }    
                         $navreveal.toggleClass("meanclose");
                         meanInner();
-                        jQuery(removeElements).hide();
+                        jQuery(removeElements).addClass('mean-remove');
                     });
                     
                     // for one page websites, reset all variables...
