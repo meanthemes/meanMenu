@@ -1,4 +1,4 @@
-MeanMenu v2.0.5
+MeanMenu v2.0.6
 ===========
 
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
@@ -96,4 +96,9 @@ meanRemoveAttrs: false
 onePage: false 
 
 - set to true for one page sites, the navigation will close back up on itself on click
+
+removeElements: "" 
+
+- enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
+
 

@@ -1,5 +1,5 @@
 /*!
- * jQuery meanMenu v2.0.5
+ * jQuery meanMenu v2.0.6
  * @Copyright (C) 2012-2013 Chris Wharton (https://github.com/weare2ndfloor/meanMenu)
  *
  */
@@ -44,7 +44,8 @@
             meanExpand: "+", // single character you want to represent the expand for ULs
             meanContract: "-", // single character you want to represent the contract for ULs
             meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
-            onePage: false // set to true for one page sites
+            onePage: false, // set to true for one page sites
+            removeElements: "" // set to hide page elements
         };
         var options = $.extend(defaults, options);
         
@@ -71,6 +72,7 @@
             var meanContract = options.meanContract;
             var meanRemoveAttrs = options.meanRemoveAttrs;
             var onePage = options.onePage;
+            var removeElements = options.removeElements;
                         
             //detect known mobile/tablet usage
             if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {
@@ -130,6 +132,7 @@
             	jQuery(meanMenu).show();
             	menuOn = false;
             	meanMenuExist = false;
+            	jQuery(removeElements).show();
             }
             
             //navigation reveal 
@@ -212,6 +215,7 @@
 	                    }    
                         $navreveal.toggleClass("meanclose");
                         meanInner();
+                        jQuery(removeElements).hide();
                     });
                     
                     // for one page websites, reset all variables...
