@@ -1,6 +1,10 @@
 MeanMenu v2.0.6
 ===========
 
+Looking for a WordPress version?
+---
+Our friends over at PluginHero have just released the <a href="http://pluginhero.com/portfolio/meanmenu/">WordPress version of MeanMenu</a>. 
+
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
 
 **Please note: This is not a menu system replacement. It is simply a lightweight piece of jQuery to convert a standard navigation into a mobile/tablet navigation.**
