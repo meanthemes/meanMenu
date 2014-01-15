@@ -30,7 +30,7 @@ Then add the CSS for this after all of your other CSS in the &lt;head&gt; sectio
 
 	<link rel="stylesheet" href="meanmenu.css" media="all" />
 
-Then in your usual document.ready, this is working under the assumption your navigation is in <header><nav> structure...
+Then in your usual document.ready, this is working under the assumption your navigation is in &lt;header>&lt;nav> structure...
 
     jQuery(document).ready(function () {
     	jQuery('header nav').meanmenu();
@@ -50,9 +50,9 @@ meanMenuCloseSize: "18px"
 
 - Set font size of close button
 
-meanMenuOpen: "<span /><span /><span />"
+meanMenuOpen: "&lt;span />"
 
-- Text/markup you want when menu is closed, styling in CSS provides 3 bars with these spans
+- Text/markup you want when menu is closed, styling in CSS using :before and :after selectors provides 3 bars with a single &lt;span>
 
 meanRevealPosition: "right"
 
