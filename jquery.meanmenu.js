@@ -32,7 +32,7 @@
             meanMenuContainer: 'body', // Choose where meanmenu will be placed within the HTML
             meanMenuClose: "X", // single character you want to represent the close menu button
             meanMenuCloseSize: "18px", // set font size of close button
-            meanMenuOpen: "<span class='mean-menuicon' />", // text/markup you want when menu is closed
+            meanMenuOpen: "<span class='mm-icon mmi1' /><span class='mm-icon mmi2' /><span class='mm-icon' />", // text/markup you want when menu is closed
             meanRevealPosition: "right", // left right or center positions
             meanRevealPositionDistance: "0", // Tweak the position of the menu
             meanRevealColour: "", // override CSS colours for the reveal background

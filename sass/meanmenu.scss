@@ -16,9 +16,7 @@
 // ----------------------------------------------------------------------------
 
 $c-white:       #fff;
-
 $reveal-size:   22px;
-
 $mm-background: #0c1923;
 
 
@@ -43,12 +41,6 @@ $mm-background: #0c1923;
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-%vertical-align {
-  @include vendor(transform, translateY(-50%));
-  position: relative;
-  top: 50%;
 }
 
 %mean-menuicon {
@@ -114,22 +106,16 @@ $mm-background: #0c1923;
 }
 
 // meanMenu collapsed Icon
-.mean-menuicon {
-  @extend %vertical-align;
+.mm-icon {
   @extend %mean-menuicon;
+}
 
-  &:before, &:after {
-    @extend %mean-menuicon;
-    content: '';
-  }
+.mmi1 {
+  margin-top: 6px;
+}
 
-  &:before {
-    bottom: 6px;
-  }
-
-  &:after {
-    top: 3px;
-  }
+.mmi2 {
+  margin: 3px 0;
 }
 
 // Navigation list styling

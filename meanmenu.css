@@ -15,17 +15,7 @@
   width: 100%;
 }
 
-.mean-menuicon {
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: relative;
-  top: 50%;
-}
-
-.mean-menuicon, .mean-menuicon:before, .mean-menuicon:after {
+.mm-icon {
   background: white;
   display: block;
   height: 3px;
@@ -76,14 +66,12 @@
   display: block;
 }
 
-.mean-menuicon:before, .mean-menuicon:after {
-  content: '';
+.mmi1 {
+  margin-top: 6px;
 }
-.mean-menuicon:before {
-  bottom: 6px;
-}
-.mean-menuicon:after {
-  top: 3px;
+
+.mmi2 {
+  margin: 3px 0;
 }
 
 .mean-nav {
