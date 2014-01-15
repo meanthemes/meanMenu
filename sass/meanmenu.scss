@@ -1,0 +1,218 @@
+
+/*! #######################################################################
+
+  MeanMenu 2.0.6
+  --------
+
+  To be used with jquery.meanmenu.js
+  by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
+
+  Sass version by Scott O'Hara - https://github.com/scottaohara
+
+####################################################################### */
+
+// ----------------------------------------------------------------------------
+//  Variables
+// ----------------------------------------------------------------------------
+
+$c-white:       #fff;
+$reveal-size:   22px;
+$mm-background: #0c1923;
+
+
+// ----------------------------------------------------------------------------
+//  Mixins
+// ----------------------------------------------------------------------------
+
+@mixin vendor($property, $value, $moz: true, $ms: true, $o: true, $webkit: true) {
+  @if $moz    == true  {    -moz-#{$property}: $value; }
+  @if $ms     == true  {     -ms-#{$property}: $value; }
+  @if $o      == true  {      -o-#{$property}: $value; }
+  @if $webkit == true  { -webkit-#{$property}: $value; }
+                                 #{$property}: $value;
+}
+
+
+// ----------------------------------------------------------------------------
+//  Silent Classes
+// ----------------------------------------------------------------------------
+
+%reset {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+%mean-menuicon {
+  background: $c-white;
+  display: block;
+  height: 3px;
+  position: relative;
+}
+
+%mean-icon-buttons {
+  font-weight: 700;
+  padding: 14px !important;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 26px;
+}
+
+// ----------------------------------------------------------------------------
+//  MeanMenu
+// ----------------------------------------------------------------------------
+
+// Fix for box sizing on Foundation Framework etc.
+.mean-container * {
+  @include vendor(box-sizing, content-box, $ms: false, $o: false);
+}
+
+
+// Hide menu until viewport size is reached
+.meanmenu-reveal {
+  @extend %mean-icon-buttons;
+  color: $c-white;
+  cursor: pointer;
+  display: none; // hides menu
+  font-family: Arial,Helvetica,sans-serif;
+  height: $reveal-size;
+  line-height: $reveal-size;
+  text-decoration: none;
+  text-indent: -9999em;
+  top: 0;
+
+  &:hover {
+    background: #000;
+    color: $c-white;
+  }
+}
+
+
+// when under viewport size, .mean-container is added to body
+.mean-bar {
+  background: $mm-background;
+  float: left;
+  min-height: 42px;
+  padding: 4px 0;
+  width: 100%;
+  z-index: 999999;
+}
+
+
+// reveal meanMenu
+.meanmenu-reveal {
+  display: block;
+}
+
+// meanMenu collapsed Icon
+.mm-icon {
+  @extend %mean-menuicon;
+}
+
+.mmi1 {
+  margin-top: 6px;
+}
+
+.mmi2 {
+  margin: 3px 0;
+}
+
+// Navigation list styling
+.mean-nav {
+  background: #0c1923;
+  float: left;
+  margin-top: 44px;
+  width: 100%;
+
+  ul {
+    @extend %reset;
+    list-style-type: none;
+  }
+
+  a {
+    border-top: 1px solid #383838;
+    border-top: 1px solid rgba(255,255,255,.5);
+    color: $c-white;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 1em 5%;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 90%;
+
+    &:hover {
+      background: #252525;
+      background: rgba(255,255,255,0.1);
+    }
+  }
+
+  li {
+    float: left;
+    position: relative;
+    width: 100%;
+
+    li a {
+      border-top: 1px solid #f1f1f1;
+      border-top: 1px solid rgba(255,255,255,.25);
+      opacity: .75;
+      filter: alpha(opacity=75);
+      padding: 1em 10%;
+      text-shadow: none !important;
+      visibility: visible;
+      width: 80%;
+    }
+
+    li li a {
+      padding: 1em 15%;
+      width: 70%;
+    }
+
+    li li li a {
+      padding: 1em 20%;
+      width: 60%;
+    }
+
+    li li li li a {
+      padding: 1em 25%;
+      width: 50%;
+    }
+  }
+
+  .mean-last a {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .mean-expand {
+    @extend %mean-icon-buttons;
+    background: rgba(255,255,255,.1);
+    border: none !important;
+    border-left: 1px solid rgba(255,255,255,.4) !important;
+    border-bottom: 1px solid rgba(255,255,255,.2) !important;
+    height: 28px;
+    line-height: 28px;
+    top: 1px;
+    z-index: 2;
+
+    &:hover {
+      background: rgba(0,0,0,0.9);
+    }
+  }
+}
+
+.mean-push {
+  @extend %reset;
+  clear: both;
+  float: left;
+}
+
+.mean-nav .wrapper {
+  @extend %reset;
+}
+
+.mean-remove {
+  display: none !important;
+}

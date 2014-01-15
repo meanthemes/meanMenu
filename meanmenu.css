@@ -1,168 +1,155 @@
-
 /*! #######################################################################
 
-	MeanMenu 2.0.6
-	--------
-	
-	To be used with jquery.meanmenu.js by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
+  MeanMenu 2.0.6
+  --------
+
+  To be used with jquery.meanmenu.js
+  by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
+
+  Sass version by Scott O'Hara - https://github.com/scottaohara
 
 ####################################################################### */
-
-/* hide the link until viewport size is reached */
-a.meanmenu-reveal {
-	display: none;
+.mean-nav ul, .mean-push, .mean-nav .wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-/* when under viewport size, .mean-container is added to body */
-.mean-container .mean-bar {
-	float: left;
-	width: 100%;
-	position: relative;
-	background: #0c1923;
-	padding: 4px 0;
-	min-height: 42px;
-	z-index: 999999;
+.mm-icon {
+  background: white;
+  display: block;
+  height: 3px;
+  position: relative;
 }
 
-.mean-container a.meanmenu-reveal {
-	width: 22px;
-	height: 22px;
-	padding: 13px 13px 11px 13px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	cursor: pointer;
-	color: #fff;
-	text-decoration: none;
-	font-size: 16px;
-	text-indent: -9999em;
-	line-height: 22px;
-	font-size: 1px;
-	display: block;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 700;
+.meanmenu-reveal, .mean-nav .mean-expand {
+  font-weight: 700;
+  padding: 14px !important;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 26px;
 }
 
-.mean-container a.meanmenu-reveal span {
-	display: block;
-	background: #fff;
-	height: 3px;
-	margin-top: 3px;
+.mean-container * {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
-.mean-container .mean-nav {
-	float: left;
-	width: 100%;
-	background: #0c1923;
-	margin-top: 44px;
+.meanmenu-reveal {
+  color: white;
+  cursor: pointer;
+  display: none;
+  font-family: Arial,Helvetica,sans-serif;
+  height: 22px;
+  line-height: 22px;
+  text-decoration: none;
+  text-indent: -9999em;
+  top: 0;
+}
+.meanmenu-reveal:hover {
+  background: #000;
+  color: white;
 }
 
-.mean-container .mean-nav ul {
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	list-style-type: none;
+.mean-bar {
+  background: #0c1923;
+  float: left;
+  min-height: 42px;
+  padding: 4px 0;
+  width: 100%;
+  z-index: 999999;
 }
 
-.mean-container .mean-nav ul li {
-	position: relative;
-	float: left;
-	width: 100%;
+.meanmenu-reveal {
+  display: block;
 }
 
-.mean-container .mean-nav ul li a {
-	display: block;
-	float: left;
-	width: 90%;
-	padding: 1em 5%;
-	margin: 0;
-	text-align: left;
-	color: #fff;
-	border-top: 1px solid #383838;
-	border-top: 1px solid rgba(255,255,255,0.5);
-	text-decoration: none;
-	text-transform: uppercase;
+.mmi1 {
+  margin-top: 6px;
 }
 
-.mean-container .mean-nav ul li li a {
-	width: 80%;
-	padding: 1em 10%;
-	border-top: 1px solid #f1f1f1;
-	border-top: 1px solid rgba(255,255,255,0.25);
-	opacity: 0.75;
-	filter: alpha(opacity=75);
-	text-shadow: none !important;
-	visibility: visible;
+.mmi2 {
+  margin: 3px 0;
 }
 
-.mean-container .mean-nav ul li.mean-last a {
-	border-bottom: none;
-	margin-bottom: 0;
+.mean-nav {
+  background: #0c1923;
+  float: left;
+  margin-top: 44px;
+  width: 100%;
+}
+.mean-nav ul {
+  list-style-type: none;
+}
+.mean-nav a {
+  border-top: 1px solid #383838;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 1em 5%;
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 90%;
+}
+.mean-nav a:hover {
+  background: #252525;
+  background: rgba(255, 255, 255, 0.1);
+}
+.mean-nav li {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+.mean-nav li li a {
+  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: .75;
+  filter: alpha(opacity=75);
+  padding: 1em 10%;
+  text-shadow: none !important;
+  visibility: visible;
+  width: 80%;
+}
+.mean-nav li li li a {
+  padding: 1em 15%;
+  width: 70%;
+}
+.mean-nav li li li li a {
+  padding: 1em 20%;
+  width: 60%;
+}
+.mean-nav li li li li li a {
+  padding: 1em 25%;
+  width: 50%;
+}
+.mean-nav .mean-last a {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.mean-nav .mean-expand {
+  background: rgba(255, 255, 255, 0.1);
+  border: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  height: 28px;
+  line-height: 28px;
+  top: 1px;
+  z-index: 2;
+}
+.mean-nav .mean-expand:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 
-.mean-container .mean-nav ul li li li a {
-	width: 70%;
-	padding: 1em 15%;
+.mean-push {
+  clear: both;
+  float: left;
 }
-
-.mean-container .mean-nav ul li li li li a {
-	width: 60%;
-	padding: 1em 20%;
-}
-
-.mean-container .mean-nav ul li li li li li a {
-	width: 50%;
-	padding: 1em 25%;
-}
-
-.mean-container .mean-nav ul li a:hover {
-	background: #252525;
-	background: rgba(255,255,255,0.1);
-}
-
-.mean-container .mean-nav ul li a.mean-expand {
-	margin-top: 1px;
-	width: 26px;
-	height: 32px;
-	padding: 12px !important;
-	text-align: center;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 2;
-	font-weight: 700;
-	background: rgba(255,255,255,0.1);
-	border: none !important;
-	border-left: 1px solid rgba(255,255,255,0.4) !important;
-	border-bottom: 1px solid rgba(255,255,255,0.2) !important;
-}
-
-.mean-container .mean-nav ul li a.mean-expand:hover {
-	background: rgba(0,0,0,0.9);
-}
-
-.mean-container .mean-push {
-	float: left;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	clear: both;
-}
-
-.mean-nav .wrapper {
-	width: 100%;
-	padding: 0;
-	margin: 0;
-}
-
-/* Fix for box sizing on Foundation Framework etc. */
-.mean-container .mean-bar, .mean-container .mean-bar * {
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-}
-
 
 .mean-remove {
-	display: none !important;
+  display: none !important;
 }
