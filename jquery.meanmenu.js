@@ -235,39 +235,29 @@
                 	meanOriginal();
                 }	
             } 
-            
-            if (!isMobile) {
-                //reset menu on resize above meanScreenWidth
-                jQuery(window).resize(function () {
-                    currentWidth = window.innerWidth || document.documentElement.clientWidth;
-                    if (currentWidth > meanScreenWidth) {
-                        meanOriginal();
-                    } else {
-                    	meanOriginal();
-                    }	
+
+            jQuery(window).resize(function () {
+                    // get browser width
+                currentWidth = window.innerWidth || document.documentElement.clientWidth;
+
+                if (!isMobile) {
+                    meanOriginal();
                     if (currentWidth <= meanScreenWidth) {
                         showMeanMenu();
                         meanCentered();
+                    }
+                } else {
+                    meanCentered();
+                    if (currentWidth <= meanScreenWidth) {
+                        if (meanMenuExist == false) {
+                            showMeanMenu();
+                        }
                     } else {
-                    	meanOriginal();
-                    }	
-                });
-            }
+                        meanOriginal();
+                    }
+                }
+            });
 
-       		// adjust menu positioning on centered navigation     
-            window.onorientationchange = function() {
-            	meanCentered();
-            	// get browser width
-            	currentWidth = window.innerWidth || document.documentElement.clientWidth;
-            	if (currentWidth >= meanScreenWidth) {
-            		meanOriginal();
-            	}
-            	if (currentWidth <= meanScreenWidth) {
-            		if (meanMenuExist == false) {
-            			showMeanMenu();
-            		}
-            	}
-            }
            // run main menuMenu function on load
            showMeanMenu(); 
         });
