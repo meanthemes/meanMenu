@@ -137,6 +137,7 @@
             
             //navigation reveal 
             function showMeanMenu() {
+                var meanStyles = "background:"+meanRevealColour+";color:"+meanRevealColour+";"+meanRevealPos;
                 if (currentWidth <= meanScreenWidth) {
 		            jQuery(removeElements).addClass('mean-remove');        
                 	meanMenuExist = true;
