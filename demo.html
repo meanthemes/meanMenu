@@ -1,69 +1,64 @@
 <!doctype html>
-<!--[if lt IE 7 ]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<!--[if lt IE 9]> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<![endif]-->
 <title>MeanMenu Demo</title>
-
 <style>
 /* Basic CSS */
+html {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: aliased;
+}
 body {
-margin: 0;
-padding: 0;
-font: 16px/1.5 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin: 0;
+	padding: 0;
+	font: 16px/1.5 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 h1 {
-font-size: 28px;
-font-weight: 100;
-text-align: center;
+	font-size: 28px;
+	font-weight: 100;
+	text-align: center;
 }
 header nav {
-text-align: center;
-background: #efefef;
+	text-align: center;
+	background: #efefef;
 }
 header nav ul {
-margin: 0;
-padding: 1em;
-list-style-type: none;
+	margin: 0;
+	padding: 1em;
+	list-style-type: none;
 }
 header nav ul li {
-display: inline;
-margin-left: 1em;
+	display: inline;
+	margin-left: 1em;
 }
 header nav ul li:first-child {
-margin-left: 0;
+	margin-left: 0;
 }
 header nav ul li ul {
-display: none;
+	display: none;
 }
 a {
-color: #f77564;
+	color: #f77564;
 }
 a:hover {
-color: #333;
+	color: #333;
 }
 a, a:hover {
--o-transition: color 0.25s ease-in;
--webkit-transition: color 0.25s ease-in;
--moz-transition: color 0.25s ease-in;
-transition: color 0.25s ease-in;
+	-o-transition: color 0.25s ease-in;
+	-webkit-transition: color 0.25s ease-in;
+	-moz-transition: color 0.25s ease-in;
+	transition: color 0.25s ease-in;
 }
 section, article, header {
-display: block;
-float: left;
-width: 100%;
+	display: block;
+	float: left;
+	width: 100%;
 }
 article {
-width: 96%;
-padding: 3em 2%;
+	width: 96%;
+	padding: 3em 2%;
 }
 </style>
 
@@ -118,12 +113,12 @@ padding: 3em 2%;
 	</article>
 </section>
 
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
-<script src="jquery.meanmenu.js"></script> 
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="jquery.meanmenu.js"></script>
 <script>
-jQuery(document).ready(function () {
-    jQuery('header nav').meanmenu();
-});
+	jQuery(document).ready(function () {
+	    jQuery('header nav').meanmenu();
+	});
 </script>
 </body>
 </html>

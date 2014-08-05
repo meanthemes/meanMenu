@@ -3,7 +3,7 @@ MeanMenu v2.0.6
 
 Looking for a WordPress version?
 ---
-Our friends over at PluginHero have just released the <a href="http://pluginhero.com/portfolio/meanmenu/">WordPress version of MeanMenu</a>. 
+Our friends over at PluginHero have just released the <a href="http://pluginhero.com/portfolio/meanmenu/">WordPress version of MeanMenu</a>.
 
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
 
@@ -17,15 +17,15 @@ Live Demo:
 <a href="http://www.meanthemes.com/demo/meanmenu/demo.html">http://www.meanthemes.com/demo/meanmenu/demo.html</a>
 
 
-Just include the jQuery library (http://jquery.com) 
+Just include the jQuery library (http://jquery.com)
 
 Then this file (jquery.meanmenu.js)
 
 in your HTML e.g.
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
-    <script src="assets/js/plugins/jquery.meanmenu.js"></script> 
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="assets/js/plugins/jquery.meanmenu.js"></script>
+
 Then add the CSS for this after all of your other CSS in the &lt;head&gt; section.
 
 	<link rel="stylesheet" href="meanmenu.css" media="all" />
@@ -66,10 +66,6 @@ meanRevealColour: ""
 
 - Override CSS colours for the reveal background
 
-meanRevealHoverColour: ""
-
-- Override CSS colours for the reveal hover
- 
 meanScreenWidth: "480"
 
 - Set the screen width you want meanmenu to kick in at
@@ -86,7 +82,7 @@ meanExpandableChildren: true
 
 - true to allow expand/collapse children
 
-meanExpand: "+" 
+meanExpand: "+"
 
 - single character you want to represent the expand for ULs
 
@@ -97,12 +93,10 @@ meanContract: "-"
 meanRemoveAttrs: false
 - true to remove classes and IDs, false to keep them
 
-onePage: false 
+onePage: false
 
 - set to true for one page sites, the navigation will close back up on itself on click
 
-removeElements: "" 
+removeElements: ""
 
 - enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
-
-
