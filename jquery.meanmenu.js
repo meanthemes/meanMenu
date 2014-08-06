@@ -184,10 +184,10 @@
 														e.preventDefault();
 															if (jQuery(this).hasClass("mean-clicked")) {
 																	jQuery(this).text(meanExpand);
-																jQuery(this).prev('ul').slideUp(300, function(){});
+																jQuery(this).prevAll('ul').slideUp(300, function(){});
 														} else {
 																jQuery(this).text(meanContract);
-																jQuery(this).prev('ul').slideDown(300, function(){});
+																jQuery(this).prevAll('ul').slideDown(300, function(){});
 														}
 														jQuery(this).toggleClass("mean-clicked");
 												});
