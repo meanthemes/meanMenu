@@ -1,4 +1,4 @@
-MeanMenu v2.0.6
+MeanMenu v2.0.7
 ===========
 
 Looking for a WordPress version?
