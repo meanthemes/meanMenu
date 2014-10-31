@@ -101,6 +101,6 @@ removeElements: ""
 
 - enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
 
-removeElements: ""
+meanDisplay: ""
 
-- enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
+- by default this is block, sometimes you may want to switch this to table or table-cell or inline-block etc. so now you can.
