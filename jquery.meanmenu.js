@@ -1,5 +1,5 @@
 /*!
-* jQuery meanMenu v2.0.7
+* jQuery meanMenu v2.0.8
 * @Copyright (C) 2012-2014 Chris Wharton @ MeanThemes (https://github.com/meanthemes/meanMenu)
 *
 */
@@ -44,6 +44,7 @@
 						meanContract: "-", // single character you want to represent the contract for ULs
 						meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
 						onePage: false, // set to true for one page sites
+						meanDisplay: "block", // override display method for table cell based layouts e.g. table-cell
 						removeElements: "" // set to hide page elements
 				};
 				options = $.extend(defaults, options);
@@ -69,6 +70,7 @@
 						var meanContract = options.meanContract;
 						var meanRemoveAttrs = options.meanRemoveAttrs;
 						var onePage = options.onePage;
+						var meanDisplay = options.meanDisplay;
 						var removeElements = options.removeElements;
 
 						//detect known mobile/tablet usage
@@ -128,7 +130,7 @@
 						var meanOriginal = function() {
 							jQuery('.mean-bar,.mean-push').remove();
 							jQuery(meanContainer).removeClass("mean-container");
-							jQuery(meanMenu).show();
+							jQuery(meanMenu).css('display', meanDisplay);
 							menuOn = false;
 							meanMenuExist = false;
 							jQuery(removeElements).removeClass('mean-remove');
@@ -151,7 +153,12 @@
 									// remove all classes from EVERYTHING inside meanmenu nav
 									if(meanRemoveAttrs) {
 										jQuery('nav.mean-nav ul, nav.mean-nav ul *').each(function() {
-											jQuery(this).removeAttr("class");
+											// First check if this has mean-remove class
+											if (jQuery(this).is('.mean-remove')) {
+												jQuery(this).attr('class', 'mean-remove');
+											} else {
+												jQuery(this).removeAttr("class");
+											}
 											jQuery(this).removeAttr("id");
 										});
 									}
