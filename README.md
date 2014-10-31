@@ -1,4 +1,4 @@
-MeanMenu v2.0.7
+MeanMenu v2.0.8
 ===========
 
 Looking for a WordPress version?
@@ -101,6 +101,6 @@ removeElements: ""
 
 - enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
 
-meanDisplay: ""
+removeElements: ""
 
-- by default this is block, sometimes you may want to switch this to table or table-cell or inline-block etc. so now you can.
+- enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
