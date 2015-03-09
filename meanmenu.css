@@ -41,6 +41,7 @@ a.meanmenu-reveal {
 	display: block;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 700;
+        outline: 0;
 }
 
 .mean-container a.meanmenu-reveal span {
@@ -135,6 +136,7 @@ a.meanmenu-reveal {
 	border: none !important;
 	border-left: 1px solid rgba(255,255,255,0.4) !important;
 	border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+        outline: 0;
 }
 
 .mean-container .mean-nav ul li a.mean-expand:hover {
