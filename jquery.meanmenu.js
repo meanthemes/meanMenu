@@ -257,26 +257,32 @@
 						}
 
 					jQuery(window).resize(function () {
-								// get browser width
-								currentWidth = window.innerWidth || document.documentElement.clientWidth;
+						// get browser width
+						setTimeout(function(){
+							/** 
+							 * make sure that the currentWidth variable assigned with perfect width value
+							 * @author Rakibul Hasan <santukhan02@gmail.com>
+							 */
+							currentWidth = window.innerWidth || document.documentElement.clientWidth;
 
-								if (!isMobile) {
-										meanOriginal();
-										if (currentWidth <= meanScreenWidth) {
-												showMeanMenu();
-												meanCentered();
-										}
-								} else {
-										meanCentered();
-										if (currentWidth <= meanScreenWidth) {
-												if (meanMenuExist === false) {
-														showMeanMenu();
-												}
-										} else {
-												meanOriginal();
-										}
-								}
-						});
+							if (!isMobile) {
+									meanOriginal();
+									if (currentWidth <= meanScreenWidth) {
+											showMeanMenu();
+											meanCentered();
+									}
+							} else {
+									meanCentered();
+									if (currentWidth <= meanScreenWidth) {
+											if (meanMenuExist === false) {
+													showMeanMenu();
+											}
+									} else {
+											meanOriginal();
+									}
+							}
+						},100);
+					});
 
 					// run main menuMenu function on load
 					showMeanMenu();
