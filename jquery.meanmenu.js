@@ -40,8 +40,10 @@
             meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
             meanShowChildren: true, // true to show children in the menu, false to hide them
             meanExpandableChildren: true, // true to allow expand/collapse children
+            meanExpandPosition: "after", // after to insert the expand/collapse link after the child menu 
             meanExpand: "+", // single character you want to represent the expand for ULs
             meanContract: "-", // single character you want to represent the contract for ULs
+            meanSpeed: 300, // an integer for the speed in milliseconds of the expand/collapse animations
             meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
             onePage: false, // set to true for one page sites
             meanDisplay: "block", // override display method for table cell based layouts e.g. table-cell
@@ -66,8 +68,10 @@
             var meanRevealClass = ".meanmenu-reveal";
             var meanShowChildren = options.meanShowChildren;
             var meanExpandableChildren = options.meanExpandableChildren;
+            var meanExpandPosition = options.meanExpandPosition;
             var meanExpand = options.meanExpand;
             var meanContract = options.meanContract;
+            var meanSpeed = options.meanSpeed;
             var meanRemoveAttrs = options.meanRemoveAttrs;
             var onePage = options.onePage;
             var meanDisplay = options.meanDisplay;
@@ -184,17 +188,30 @@
                         if (meanExpandableChildren) {
                             jQuery('.mean-nav ul ul').each(function() {
                                 if (jQuery(this).children().length) {
-                                    jQuery(this, 'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
+                                    var expandLink = '<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>';
+                                    if (meanExpandPosition == "before") {
+                                        jQuery(this, 'li:first > ul').before(expandLink);
+                                    } else {
+                                        jQuery(this, 'li:first > ul').after(expandLink);
+                                    }
                                 }
                             });
                             jQuery('.mean-expand').on("click", function(e) {
                                 e.preventDefault();
                                 if (jQuery(this).hasClass("mean-clicked")) {
                                     jQuery(this).text(meanExpand);
-                                    jQuery(this).prev('ul').slideUp(300, function() {});
+                                    if (meanExpandPosition == "before") {
+                                        jQuery(this).next('ul').slideUp(meanSpeed, function() {});
+                                    } else {
+                                        jQuery(this).prev('ul').slideUp(meanSpeed, function() {});
+                                    }
                                 } else {
                                     jQuery(this).text(meanContract);
-                                    jQuery(this).prev('ul').slideDown(300, function() {});
+                                    if (meanExpandPosition == "before") {
+                                        jQuery(this).next('ul').slideDown(meanSpeed, function() {});
+                                    } else {
+                                        jQuery(this).prev('ul').slideDown(meanSpeed, function() {});
+                                    }
                                 }
                                 jQuery(this).toggleClass("mean-clicked");
                             });
@@ -214,10 +231,10 @@
                             $navreveal.css("text-align", "center");
                             $navreveal.css("text-indent", "0");
                             $navreveal.css("font-size", meanMenuCloseSize);
-                            jQuery('.mean-nav ul:first').slideDown();
+                            jQuery('.mean-nav ul:first').slideDown(meanSpeed);
                             menuOn = true;
                         } else {
-                            jQuery('.mean-nav ul:first').slideUp();
+                            jQuery('.mean-nav ul:first').slideUp(meanSpeed);
                             menuOn = false;
                         }
                         $navreveal.toggleClass("meanclose");
