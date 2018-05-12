@@ -40,6 +40,7 @@
             meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
             meanShowChildren: true, // true to show children in the menu, false to hide them
             meanExpandableChildren: true, // true to allow expand/collapse children
+            meanExpandPosition: "after", // after to insert the expand/collapse link after the child menu 
             meanExpand: "+", // single character you want to represent the expand for ULs
             meanContract: "-", // single character you want to represent the contract for ULs
             meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
@@ -66,6 +67,7 @@
             var meanRevealClass = ".meanmenu-reveal";
             var meanShowChildren = options.meanShowChildren;
             var meanExpandableChildren = options.meanExpandableChildren;
+            var meanExpandPosition = options.meanExpandPosition;
             var meanExpand = options.meanExpand;
             var meanContract = options.meanContract;
             var meanRemoveAttrs = options.meanRemoveAttrs;
@@ -113,7 +115,7 @@
             }
             // run center function
             meanCentered();
-
+			
             // set all styles for mean-reveal
             var $navreveal = "";
 
@@ -184,8 +186,12 @@
                         if (meanExpandableChildren) {
                             jQuery('.mean-nav ul ul').each(function() {
                                 if (jQuery(this).children().length) {
-                                    jQuery(this, 'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
-                                }
+                                    if (meanExpandPosition == "before") {
+										jQuery(this, 'li:first').parent().prepend('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
+									} else {
+										jQuery(this, 'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
+									}
+								}
                             });
                             jQuery('.mean-expand').on("click", function(e) {
                                 e.preventDefault();
