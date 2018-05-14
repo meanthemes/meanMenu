@@ -74,7 +74,7 @@ meanScreenWidth: "480"
 
 meanNavPush: ""
 
-- Set a height here in px, em or % if you want to budge your layout now the navigation is missing.
+- Set a height here in px, em or % if you want to budge your layout now the navigation is missing
 
 meanShowChildren: true
 
@@ -87,6 +87,14 @@ meanExpandableChildren: true
 meanExpand: "+"
 
 - single character you want to represent the expand for ULs
+
+meanExpandPostion: "after"
+
+- Set to either before or after to change where the expand/contract icon is inserted in the list markup. Useful for accessibility tweaks
+
+meanSpeed: 300
+
+- an integer that sets the speed of all animations in milliseconds. 1000 = 1 second
 
 meanContract: "-"
 
