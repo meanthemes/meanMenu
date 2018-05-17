@@ -30,7 +30,7 @@
     "use strict";
     $.fn.meanmenu = function(options) {
         var defaults = {
-            meanMenuTarget: jQuery(this), // Target the current HTML markup you wish to replace
+            meanMenuTarget: jQuery(this), // Target the current HTML list wrapper you wish to replace
             meanMenuContainer: 'body', // Choose where meanmenu will be placed within the HTML
             meanMenuClose: "X", // single character you want to represent the close menu button
             meanMenuCloseSize: "18px", // set font size of close button
@@ -190,12 +190,6 @@
                         if (meanExpandableChildren) {
                             jQuery('.mean-nav ul ul').each(function() {
                                 if (jQuery(this).children().length) {
-                                    if (meanExpandPosition == "before") {
-                                      jQuery(this, 'li:first').parent().prepend('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
-                                        } else {
-                                      jQuery(this, 'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
-                                        }
-                                    }
 
                                     var expandLink = '<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>';
                                     

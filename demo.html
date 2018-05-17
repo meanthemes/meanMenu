@@ -124,7 +124,10 @@ article {
 <script src="jquery.meanmenu.js"></script>
 <script>
 	jQuery(document).ready(function () {
-	    jQuery('header nav').meanmenu();
+	    jQuery('header nav').meanmenu({
+	    	meanExpandPosition: 'before',
+		meanSpeed: 200
+	    });
 	});
 </script>
 </body>
