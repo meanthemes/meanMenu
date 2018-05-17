@@ -190,12 +190,6 @@
                         if (meanExpandableChildren) {
                             jQuery('.mean-nav ul ul').each(function() {
                                 if (jQuery(this).children().length) {
-                                    if (meanExpandPosition == "before") {
-                                      jQuery(this, 'li:first').parent().prepend('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
-                                        } else {
-                                      jQuery(this, 'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
-                                        }
-                                    }
 
                                     var expandLink = '<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>';
                                     
