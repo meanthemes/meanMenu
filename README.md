@@ -7,8 +7,6 @@ MeanMenu v2.0.10
 - Added a `meanSpeed` option to specify animation speed in milliseconds
 - Updated the selector for targeting child menus
 
-Note that I haven't updated the demo page or checked the styles, as this is just to cater for my specific project at this stage. I'll try to get to that later, or you can give it a go ;)
-
 Ok, back to the original README now...
 
 -----
