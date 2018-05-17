@@ -1,5 +1,7 @@
 /*!
- * jQuery meanMenu v2.0.8
+ * jQuery meanMenu v2.0.9 - Forked version (https://github.com/T-Fletcher/meanMenu)
+ * 
+ * Originally produced by:
  * @Copyright (C) 2012-2014 Chris Wharton @ MeanThemes (https://github.com/meanthemes/meanMenu)
  *
  */
@@ -117,7 +119,7 @@
             }
             // run center function
             meanCentered();
-
+			
             // set all styles for mean-reveal
             var $navreveal = "";
 
@@ -188,7 +190,15 @@
                         if (meanExpandableChildren) {
                             jQuery('.mean-nav ul ul').each(function() {
                                 if (jQuery(this).children().length) {
+                                    if (meanExpandPosition == "before") {
+                                      jQuery(this, 'li:first').parent().prepend('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
+                                        } else {
+                                      jQuery(this, 'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>');
+                                        }
+                                    }
+
                                     var expandLink = '<a class="mean-expand" href="#" style="font-size: ' + meanMenuCloseSize + '">' + meanExpand + '</a>';
+                                    
                                     if (meanExpandPosition == "before") {
                                         jQuery(this, 'li:first > ul').before(expandLink);
                                     } else {
