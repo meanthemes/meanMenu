@@ -1,5 +1,17 @@
-MeanMenu v2.0.8
+MeanMenu v2.0.9
 ===========
+**This repo (https://github.com/T-Fletcher/meanMenu/) is a tweaked version, originally forked from  MeanTheme's MeanMenu JS library (https://github.com/meanthemes/meanMenu)**
+
+## Changes
+- Added a `meanExpandPosition` option to specify if the expand/contract link appears before or after the target child menu
+- Added a `meanSpeed` option to specify animation speed in milliseconds
+- Updated the selector for targeting child menus
+
+Note that I haven't updated the demo page or checked the styles, as this is just to cater for my specific project at this stage. I'll try to get to that later, or you can give it a go ;)
+
+Ok, back to the original README now...
+
+-----
 
 Looking for a WordPress version?
 ---
@@ -74,7 +86,7 @@ meanScreenWidth: "480"
 
 meanNavPush: ""
 
-- Set a height here in px, em or % if you want to budge your layout now the navigation is missing.
+- Set a height here in px, em or % if you want to budge your layout now the navigation is missing
 
 meanShowChildren: true
 
@@ -87,6 +99,14 @@ meanExpandableChildren: true
 meanExpand: "+"
 
 - single character you want to represent the expand for ULs
+
+meanExpandPostion: "after"
+
+- Set to either before or after to change where the expand/contract icon is inserted in the list markup. Useful for accessibility tweaks
+
+meanSpeed: 300
+
+- an integer that sets the speed of all animations in milliseconds. 1000 = 1 second
 
 meanContract: "-"
 
