@@ -1,4 +1,4 @@
-MeanMenu v2.0.9
+MeanMenu v2.0.10
 ===========
 **This repo (https://github.com/T-Fletcher/meanMenu/) is a tweaked version, originally forked from  MeanTheme's MeanMenu JS library (https://github.com/meanthemes/meanMenu)**
 
