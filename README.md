@@ -4,7 +4,7 @@ MeanMenu v2.0.11
 
 ## Changes in 2.0.11
 
-- Added a `meanAria` option to add screenreader-friendly attributes to expand links
+- Added a `meanAria` option to add screenreader-friendly attributes to expand links 
 
 ## Changes in 2.0.10
 - Added a `meanExpandPosition` option to specify if the expand/contract link appears before or after the target child menu
