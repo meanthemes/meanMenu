@@ -45,7 +45,8 @@
 						meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
 						onePage: false, // set to true for one page sites
 						meanDisplay: "block", // override display method for table cell based layouts e.g. table-cell
-						removeElements: "" // set to hide page elements
+						removeElements: "", // set to hide page elements
+						parentClickExpands: true // set true to expand on the menu link directly
 				};
 				options = $.extend(defaults, options);
 
@@ -72,8 +73,9 @@
 						var onePage = options.onePage;
 						var meanDisplay = options.meanDisplay;
 						var removeElements = options.removeElements;
+						var parentClickExpands = options.parentClickExpands;
 
-						//detect known mobile/tablet usage
+						// detect known mobile/tablet usage
 						var isMobile = false;
 						if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {
 								isMobile = true;
@@ -183,17 +185,30 @@
 											// allow expandable sub nav(s)
 											if(meanExpandableChildren){
 												jQuery('.mean-nav ul ul').each(function() {
-														if(jQuery(this).children().length){
-																jQuery(this,'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: '+ meanMenuCloseSize +'">'+ meanExpand +'</a>');
+														if (jQuery(this).children().length){
+															let parent = jQuery(this,'li:first').parent();
+															parent.append('<a class="mean-expand" style="font-size: '+ meanMenuCloseSize +'">'+ meanExpand +'</a>');
+															
+															// allows that parent click trigger the sub-menu expansion
+															if (parentClickExpands === true) {
+																parent.children('a').first().addClass('mean-expand-cpy');
+															}
 														}
+												});
+												jQuery('.mean-expand-cpy').on("click",function(e){
+														e.preventDefault();
+
+														let parent = jQuery(this).parent();
+														parent.children('.mean-expand').trigger("click");
 												});
 												jQuery('.mean-expand').on("click",function(e){
 														e.preventDefault();
-															if (jQuery(this).hasClass("mean-clicked")) {
-																	jQuery(this).text(meanExpand);
+														
+														if (jQuery(this).hasClass("mean-clicked")) {
+																jQuery(this).html(meanExpand);
 																jQuery(this).prev('ul').slideUp(300, function(){});
 														} else {
-																jQuery(this).text(meanContract);
+																jQuery(this).html(meanContract);
 																jQuery(this).prev('ul').slideDown(300, function(){});
 														}
 														jQuery(this).toggleClass("mean-clicked");
