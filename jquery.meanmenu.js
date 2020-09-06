@@ -25,7 +25,6 @@
 	$.fn.meanmenu = function( options ) {
 		options = $.extend( defaults, options );
 
-		var currentWidth = window.innerWidth || document.documentElement.clientWidth;
 		var meanMenu = this;
 
 		return this.each(function() {
@@ -134,7 +133,7 @@
 			};
 
 			function applyMean() {
-				currentWidth = window.innerWidth || document.documentElement.clientWidth;
+				var currentWidth = window.innerWidth || document.documentElement.clientWidth;
 
 				if( currentWidth <= options.meanScreenWidth && !menuOn ) {
 					showMeanMenu();
