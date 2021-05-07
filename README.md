@@ -54,6 +54,10 @@ Then in your usual document.ready, this is working under the assumption your nav
 
 There are the following options (Options are shown with their defaults)...
 
+meanAria: true
+
+- Adds `aria-expanded`, `aria-label` and `role` attributes for better accessibility and WCAG compliance
+
 meanMenuContainer: 'body'
 
 - Choose where meanmenu will be placed within the HTML
