@@ -1,20 +1,5 @@
 MeanMenu v2.0.11
 ===========
-**This repo (https://github.com/T-Fletcher/meanMenu/) is a tweaked version, originally forked from  MeanTheme's MeanMenu JS library (https://github.com/meanthemes/meanMenu)**
-
-## Changes in 2.0.11
-
-- Added a `meanAria` option to add screenreader-friendly attributes to expand links 
-
-## Changes in 2.0.10
-- Added a `meanExpandPosition` option to specify if the expand/contract link appears before or after the target child menu
-- Added a `meanSpeed` option to specify animation speed in milliseconds
-- Updated the selector for targeting child menus
-
-Ok, back to the original README now...
-
------
-
 Looking for a WordPress version?
 ---
 Our friends over at PluginHero have just released the <a href="http://pluginhero.com/portfolio/meanmenu/">WordPress version of MeanMenu</a>.
