@@ -1,6 +1,5 @@
-MeanMenu v2.0.8
+MeanMenu v2.0.11
 ===========
-
 Looking for a WordPress version?
 ---
 Our friends over at PluginHero have just released the <a href="http://pluginhero.com/portfolio/meanmenu/">WordPress version of MeanMenu</a>.
@@ -40,6 +39,10 @@ Then in your usual document.ready, this is working under the assumption your nav
 
 There are the following options (Options are shown with their defaults)...
 
+meanAria: true
+
+- Adds `aria-expanded`, `aria-label` and `role` attributes for better accessibility and WCAG compliance
+
 meanMenuContainer: 'body'
 
 - Choose where meanmenu will be placed within the HTML
@@ -74,7 +77,7 @@ meanScreenWidth: "480"
 
 meanNavPush: ""
 
-- Set a height here in px, em or % if you want to budge your layout now the navigation is missing.
+- Set a height here in px, em or % if you want to budge your layout now the navigation is missing
 
 meanShowChildren: true
 
@@ -87,6 +90,14 @@ meanExpandableChildren: true
 meanExpand: "+"
 
 - single character you want to represent the expand for ULs
+
+meanExpandPostion: "after"
+
+- Set to either before or after to change where the expand/contract icon is inserted in the list markup. Useful for accessibility tweaks
+
+meanSpeed: 300
+
+- an integer that sets the speed of all animations in milliseconds. 1000 = 1 second
 
 meanContract: "-"
 
