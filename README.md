@@ -1,23 +1,28 @@
-MeanMenu v2.0.8
+MeanMenu v3.0
 ===========
 
-Looking for a WordPress version?
----
-Our friends over at PluginHero have just released the <a href="http://pluginhero.com/portfolio/meanmenu/">WordPress version of MeanMenu</a>.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT
+HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR
+FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE
+OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS,
+COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.COPYRIGHT HOLDERS WILL NOT
+BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://gnu.org/licenses/>.
 
 A menu system for converting a standard menu into a mobile/tablet responsive menu, media query independent.
 
 **Please note: This is not a menu system replacement. It is simply a lightweight piece of jQuery to convert a standard navigation into a mobile/tablet navigation.**
 
-**MeanMenu only works for one menu per page.**
-
-If you are looking for drop down functionality on the desktop, MeanMenu doesn't do it. Use <a title="Superfish Drop down menus" href="http://plugins.jquery.com/superfish/">Superfish</a> as well as MeanMenu. You can see Superfish + MeanMenu on all of our themes, for example <a title="Literary Theme" href="http://www.meanthemes.com/theme/literary/">Literary</a>.
-
-And yes, it works with jQuery 2.0 - obviously IE 7 & 8 will not work.
-
-Live Demo:
-<a href="http://www.meanthemes.com/demo/meanmenu/demo.html">http://www.meanthemes.com/demo/meanmenu/demo.html</a>
-
+If you are looking for drop down functionality on the desktop, MeanMenu doesn't do it. Use <a title="Superfish Drop down menus" href="http://plugins.jquery.com/superfish/">Superfish</a> as well as MeanMenu.
 
 Just include the jQuery library (http://jquery.com)
 
@@ -26,7 +31,7 @@ Then this file (jquery.meanmenu.js)
 in your HTML e.g.
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="assets/js/plugins/jquery.meanmenu.js"></script>
+    <script src="jquery.meanmenu.js"></script>
 
 Then add the CSS for this after all of your other CSS in the &lt;head&gt; section.
 
@@ -44,17 +49,21 @@ meanMenuContainer: 'body'
 
 - Choose where meanmenu will be placed within the HTML
 
-meanMenuClose: "X"
+meanBarColour: '#0c1923'
+
+- set colour for the bar background
+
+meanNavColour: 'inherit'
+
+- set colour for the nav background
+
+meanMenuClose: "x"
 
 - Single character you want to represent the close menu button
 
-meanMenuCloseSize: "18px"
+meanMenuOpen: "≡"
 
-- Set font size of close button
-
-meanMenuOpen: "<span /><span /><span />"
-
-- Text/markup you want when menu is closed, styling in CSS provides 3 bars with these spans
+- Single character you want to represent the open menu button
 
 meanRevealPosition: "right"
 
@@ -64,15 +73,15 @@ meanRevealPositionDistance: "0"
 
 - Tweak the position of the menu
 
-meanRevealColour: ""
+meanRevealColour: "none"
 
-- Override CSS colours for the reveal background
+- set colour for the reveal background
 
-meanScreenWidth: "480"
+meanScreenWidth: "640"
 
 - Set the screen width you want meanmenu to kick in at
 
-meanNavPush: ""
+meanNavPush: false
 
 - Set a height here in px, em or % if you want to budge your layout now the navigation is missing.
 
@@ -99,7 +108,7 @@ onePage: false
 
 - set to true for one page sites, the navigation will close back up on itself on click
 
-removeElements: ""
+removeElements: null
 
 - enter comma separated values in here of elements you want hidden from the container of meanmenu e.g. if you had a search box called .search, enter ".search" in here
 
